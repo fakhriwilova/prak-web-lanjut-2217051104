@@ -7,11 +7,14 @@
 </head>
 <body>
     <h1>Ini Halaman User</h1>
-    <form action="/action_page.php">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="fname" name="fname" value="John"><br>
-        <label for="lname">Last name:</label><br>
-        <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <form action="{{ route('user.store') }}" method="POST">
+        @csrf
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" value="M. Fakhri Wilova"><br>
+        <label for="npm">NPM:</label><br>
+        <input type="text" id="npm" name="npm" value="2217051104"><br>
+        <label for="npm">Kelas:</label><br>
+        <input type="text" id="kelas" name="kelas" value="A"><br><br>
         <input type="submit" value="Submit">
     </form> 
 </body>
