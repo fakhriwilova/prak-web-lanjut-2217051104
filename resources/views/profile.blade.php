@@ -11,17 +11,17 @@
     <td>Nama</td>
     <td>:</td>
     <td><?= $nama ?></td>
-</tr>
-<tr>
+  </tr>
+  <tr>
     <td>Kelas</td>
     <td>:</td>
     <td><?= $kelas ?></td>
-</tr>
-<tr>
+  </tr>
+  <tr>
     <td>NPM</td>
     <td>:</td>
     <td><?= $npm ?></td>
-</tr>
+  </tr>
   </table>
 </body>
 </html>
