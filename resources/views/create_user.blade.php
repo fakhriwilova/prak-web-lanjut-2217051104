@@ -74,6 +74,21 @@ form > * {
 </style>
 <body>
     <h1>Ini Halaman User</h1>
+
+    <h1><img src="\assets\images\Jett.jpeg"></h1>
+    <form action="{{ route('user.store') }}" method="POST">
+        @csrf
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" value="M. Fakhri Wilova" required><br>
+        <label for="npm">NPM:</label><br>
+        <input type="text" id="npm" name="npm" value="2217051104" required><br>
+        <label for="id_kelas">Kelas:</label><br>
+        <select name="kelas_id" id="kelas_id" required>
+            @foreach($kelas as $kelasItem)
+            <option value = "{{$kelasItem->id}}">{{$kelasItem->nama_kelas}}</option>
+            @endforeach
+        </select><br><br>
+
     <h1><img src="/assets/img/jett.jpeg"></h1>
     <form action="{{ route('user.store') }}" method="POST">
         @csrf
@@ -83,6 +98,7 @@ form > * {
         <input type="text" id="npm" name="npm" value="2217051104"><br>
         <label for="npm">Kelas:</label><br>
         <input type="text" id="kelas" name="kelas" value="A"><br><br>
+
         <input type="submit" value="Submit">
     </form> 
 </body>

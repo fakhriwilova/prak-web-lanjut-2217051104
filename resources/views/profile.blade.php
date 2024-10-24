@@ -9,6 +9,25 @@
 
         body {
             font-family: 'Poppins', sans-serif;
+
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .profile-container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+
             background-color: #FFFFFF;
             display: flex;
             justify-content: center;
@@ -22,6 +41,7 @@
             text-align: center;
             width: 300px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+
         }
 
         .profile-image img {
@@ -31,6 +51,45 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             transition: box-shadow 0.3s ease;
         }
+
+
+        table {
+            width: 100%;
+            margin-top: 20px;
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 10px;
+            text-align: left;
+            font-size: 18px;
+        }
+
+        table td:nth-child(1) {
+            font-weight: 600;
+            color: #333;
+        }
+
+        table td:nth-child(2) {
+            text-align: center;
+            width: 10px;
+        }
+
+        table td:nth-child(3) {
+            color: #555;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .profile-container {
+                padding: 20px;
+            }
+            table td {
+                font-size: 16px;
+            }
 
         .profile-details {
             margin-top: 15px;
@@ -57,26 +116,33 @@
 
         .profile-info:last-child {
             color: #000;
+
         }
     </style>
 </head>
 <body>
-  <table>
-  <tr>
-    <td>Nama</td>
-    <td>:</td>
-    <td><?= $nama ?></td>
-</tr>
-<tr>
-    <td>Kelas</td>
-    <td>:</td>
-    <td><?= $kelas ?></td>
-</tr>
-<tr>
-    <td>NPM</td>
-    <td>:</td>
-    <td><?= $npm ?></td>
-</tr>
-  </table>
+
+    <div class="profile-container">
+        <div class="profile-image">
+            <img src="\assets\images\Jett.jpeg" alt="Profile Image">
+        </div>
+        <table>
+            <tr>
+                <td>Nama</td>
+                <td>:</td>
+                <td><?= $nama ?></td>
+            </tr>
+            <tr>
+                <td>Kelas</td>
+                <td>:</td>
+                <td><?= $nama_kelas ?></td>
+            </tr>
+            <tr>
+                <td>NPM</td>
+                <td>:</td>
+                <td><?= $npm ?></td>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
