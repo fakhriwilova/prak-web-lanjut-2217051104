@@ -61,16 +61,22 @@
     </style>
 </head>
 <body>
-    <div class="profile-container">
-        <div class="profile-image">
-            <img src="/assets/img/jett.jpeg">
-        </div>
-
-        <div class="profile-details">
-            <div class="profile-info">{{ $nama }}</div>
-            <div class="profile-info">{{ $kelas }}</div>
-            <div class="profile-info">{{ $npm }}</div>
-        </div>
-    </div>
+  <table>
+  <tr>
+    <td>Nama</td>
+    <td>:</td>
+    <td><?= $nama ?></td>
+</tr>
+<tr>
+    <td>Kelas</td>
+    <td>:</td>
+    <td><?= $kelas ?></td>
+</tr>
+<tr>
+    <td>NPM</td>
+    <td>:</td>
+    <td><?= $npm ?></td>
+</tr>
+  </table>
 </body>
 </html>
