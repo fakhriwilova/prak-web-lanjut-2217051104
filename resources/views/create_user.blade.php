@@ -97,22 +97,36 @@ form > * {
 
 </style>
 <body>
-    <h1>Ini Halaman User</h1>
+    <div class="mb-3 mt-2 m-3">
+        <a href="{{ route('user.list') }}" class="btn btn-success">List User</a>
+    </div>
     <h1><img src="\assets\images\Jett.jpeg"></h1>
     <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
-        <label for="nama">Nama:</label><br>
-        <input type="text" id="nama" name="nama" value="M. Fakhri Wilova" required><br>
-        <label for="npm">NPM:</label><br>
-        <input type="text" id="npm" name="npm" value="2217051104" required><br>
-        <label for="id_kelas">Kelas:</label><br>
-        <select name="kelas_id" id="kelas_id" required><br><br>
+        <div>
+            <label for="nama">Nama:</label><br>
+            <input type="text" id="nama" name="nama" value="M. Fakhri Wilova" required><br>
+        </div>
+
+        <div>
+            <label for="npm">NPM:</label><br>
+            <input type="text" id="npm" name="npm" value="2217051104" required><br>
+        </div>
+
+        <div>
+            <label for="id_kelas">Kelas:</label><br>
+            <select name="kelas_id" id="kelas_id" required><br><br>
             @foreach($kelas as $kelasItem)
             <option value = "{{$kelasItem->id}}">{{$kelasItem->nama_kelas}}</option>
             @endforeach
         </select><br><br>
-        <label for="foto">Foto:</label><br>
-        <input type="file" id="foto" name="foto" required><br>
+        </div>
+
+        <div>
+            <label for="foto">Foto:</label><br>
+            <input type="file" id="foto" name="foto" required><br>
+        </div>
+
         <input type="submit" value="Submit">
     </form> 
 </body>

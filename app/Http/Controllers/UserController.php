@@ -92,6 +92,39 @@ class UserController extends Controller
 
         return redirect()->to('/users')->with('success', 'User created successfully!');
     }
+
+    public function edit($id){
+        $user = UserModel::findOrFail($id);
+        $kelasModel = new Kelas();
+        $kelas = $kelasModel->getKelas();
+        $title = 'Edit User';
+        return view('edit_user', compact('user', 'kelas', 'title'));
+    }
+    
+    public function update(Request $request, $id){
+        $user = UserModel::findOrFail($id);
+        
+        $user->nama = $request->nama;
+        $user->npm = $request->npm;
+        $user->kelas_id = $request->kelas_id;
+
+        if($request->hasFile('foto')){
+            $fileName = time() . '.' . $request->foto->extension();
+            $request->foto->move(public_path('uploads'), $fileName);
+            $user->foto = 'uploads/' . $fileName;
+        }
+
+        $user->save();
+        return redirect()->route('users.index')->with('succes', 'User update succesfully');
+
+    }
+
+    public function destroy($id){
+        $user = UserModel::findOrFail($id);
+        $user->delete();
+
+        return redirect()->route('users.index')->with('success', 'User has been deleted succesfully');
+    }
     
 
     
