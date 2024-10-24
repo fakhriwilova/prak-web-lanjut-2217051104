@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -141,3 +142,23 @@
         </div>
     </body>
 </html>
+
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class ProfileController extends Controller
+{
+    public function profile($nama="", $kelas="", $npm="")
+    { 
+        $data = [
+            'nama' => $nama,
+            'kelas' => $kelas,
+            'npm' => $npm,
+        ];
+        return view('profile', $data); 
+    }
+
+}

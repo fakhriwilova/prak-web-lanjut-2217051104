@@ -97,9 +97,14 @@ form > * {
 
 </style>
 <body>
+
     <div class="mb-3 mt-2 m-3">
         <a href="{{ route('user.list') }}" class="btn btn-success">List User</a>
     </div>
+
+    <h1>Ini Halaman User</h1>
+
+
     <h1><img src="\assets\images\Jett.jpeg"></h1>
     <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -120,12 +125,25 @@ form > * {
             <option value = "{{$kelasItem->id}}">{{$kelasItem->nama_kelas}}</option>
             @endforeach
         </select><br><br>
+
         </div>
 
         <div>
             <label for="foto">Foto:</label><br>
             <input type="file" id="foto" name="foto" required><br>
         </div>
+
+
+    <h1><img src="/assets/img/jett.jpeg"></h1>
+    <form action="{{ route('user.store') }}" method="POST">
+        @csrf
+        <label for="nama">Nama:</label><br>
+        <input type="text" id="nama" name="nama" value="M. Fakhri Wilova"><br>
+        <label for="npm">NPM:</label><br>
+        <input type="text" id="npm" name="npm" value="2217051104"><br>
+        <label for="npm">Kelas:</label><br>
+        <input type="text" id="kelas" name="kelas" value="A"><br><br>
+
 
         <input type="submit" value="Submit">
     </form> 
