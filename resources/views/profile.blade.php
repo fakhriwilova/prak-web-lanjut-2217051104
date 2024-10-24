@@ -9,6 +9,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
+
             background-color: #f4f4f4;
             display: flex;
             justify-content: center;
@@ -26,6 +27,21 @@
             text-align: center;
             max-width: 400px;
             width: 100%;
+
+            background-color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            padding: 150px;
+            height: 100vh;
+            margin: 20;
+        }
+
+        .profile-container {
+            background-color: #FFFFFF;
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
         }
 
         .profile-image img {
@@ -35,6 +51,7 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
             transition: box-shadow 0.3s ease;
         }
+
 
         table {
             width: 100%;
@@ -73,10 +90,38 @@
             table td {
                 font-size: 16px;
             }
+
+        .profile-details {
+            margin-top: 15px;
+        }
+
+        .profile-info {
+            background-color: #D3D3D3;
+            padding: 12px;
+            margin: 12px 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-info:first-child {
+            color: #000;
+        }
+
+        .profile-info:nth-child(2) {
+            color: #000;
+        }
+
+        .profile-info:last-child {
+            color: #000;
+
         }
     </style>
 </head>
 <body>
+
     <div class="profile-container">
         <div class="profile-image">
             <img src="\assets\images\Jett.jpeg" alt="Profile Image">

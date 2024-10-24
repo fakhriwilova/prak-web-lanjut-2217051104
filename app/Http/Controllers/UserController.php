@@ -2,15 +2,20 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Kelas;
 use App\Models\UserModel;
 
+use Illuminate\Http\Request;
+
+
 class UserController extends Controller
 {
     public $userModel;
     public $kelasModel;
+
 
     public function __construct()
     {
@@ -24,6 +29,14 @@ class UserController extends Controller
             'title' => 'Daftar Pengguna',
             'users' => $this->userModel->getUser(), 
         ];
+
+
+    public function create(){ 
+        return view('create_user', ['kelas' => Kelas::all(),]); 
+        
+        
+        } 
+
 
         return view('list_user', $data);
     }
@@ -56,3 +69,18 @@ class UserController extends Controller
       
     }
 }
+
+    public function create(){
+        return view('create_user');
+    }
+
+    public function store(Request $request){
+        $data = [
+            'nama' => $request->input('nama'),
+            'npm' => $request->input('npm'),
+            'kelas' => $request->input('kelas'),
+        ];
+        return view('profile', $data);
+    }
+}
+
