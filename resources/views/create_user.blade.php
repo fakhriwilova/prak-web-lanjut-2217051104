@@ -52,6 +52,18 @@ input[type="text"] {
     color: #000;
 }
 
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #000;
+}
+
 input[type="submit"] {
     width: 100%;
     background-color: #333;
@@ -61,6 +73,18 @@ input[type="submit"] {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+}
+
+select[name="kelas_id"] {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    color: #000;
 }
 
 input[type="submit"]:hover {
@@ -75,18 +99,20 @@ form > * {
 <body>
     <h1>Ini Halaman User</h1>
     <h1><img src="\assets\images\Jett.jpeg"></h1>
-    <form action="{{ route('user.store') }}" method="POST">
+    <form action="{{ route('user.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <label for="nama">Nama:</label><br>
         <input type="text" id="nama" name="nama" value="M. Fakhri Wilova" required><br>
         <label for="npm">NPM:</label><br>
         <input type="text" id="npm" name="npm" value="2217051104" required><br>
         <label for="id_kelas">Kelas:</label><br>
-        <select name="kelas_id" id="kelas_id" required>
+        <select name="kelas_id" id="kelas_id" required><br><br>
             @foreach($kelas as $kelasItem)
             <option value = "{{$kelasItem->id}}">{{$kelasItem->nama_kelas}}</option>
             @endforeach
         </select><br><br>
+        <label for="foto">Foto:</label><br>
+        <input type="file" id="foto" name="foto" required><br>
         <input type="submit" value="Submit">
     </form> 
 </body>
