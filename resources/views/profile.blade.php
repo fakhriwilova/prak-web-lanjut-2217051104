@@ -63,7 +63,7 @@
 <body>
     <div class="profile-container">
         <div class="profile-image">
-            <img src='/assets/img/jett.jpeg'>
+            <img src="/assets/img/jett.jpeg">
         </div>
 
         <div class="profile-details">

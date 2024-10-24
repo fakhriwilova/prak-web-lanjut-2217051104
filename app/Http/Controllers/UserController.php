@@ -13,10 +13,9 @@ class UserController extends Controller
     public function store(Request $request){
         $data = [
             'nama' => $request->input('nama'),
-            'kelas' => $request->input('kelas'),
             'npm' => $request->input('npm'),
+            'kelas' => $request->input('kelas'),
         ];
-
         return view('profile', $data);
     }
 }
