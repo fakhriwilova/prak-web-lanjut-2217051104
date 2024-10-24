@@ -90,7 +90,7 @@ class UserController extends Controller
             'foto' => $fotoPath, // Menyimpan path foto, jika ada
         ]);
 
-        return redirect()->to('/users')->with('success', 'User created successfully!');
+        return redirect()->to('/')->with('success', 'User created successfully!');
     }
 
     public function edit($id){
