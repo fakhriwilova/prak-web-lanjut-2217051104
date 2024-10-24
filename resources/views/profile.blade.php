@@ -124,7 +124,7 @@
 
     <div class="profile-container">
         <div class="profile-image">
-            <img src="\assets\images\Jett.jpeg" alt="Profile Image">
+        <img src="{{ $user->foto ? asset($user->foto) : asset('path/to/default-foto.jpg') }}" alt="Foto {{ $nama }}">
         </div>
         <table>
             <tr>
